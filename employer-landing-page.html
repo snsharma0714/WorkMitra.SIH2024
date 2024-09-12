@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Landing Page</title>
+    <link rel="stylesheet" href="employer-landing-page.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo"><a href="#">Work Mitra</a></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for freelancers...">
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="logout">Logout</a>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="welcome-content">
+            <h1>Welcome, Employer!</h1>
+            <p>Ready to find the best freelancers for your projects? 
+            Post a job or explore top freelancers in various categories.</p>
+            <a href="#post-job" class="btn-post-job">Post a Job</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2>Freelancer Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card" onclick="showCategoryDetails('design')">
+                <h3>Design</h3>
+                <p>Graphic Design, UX/UI, and more.</p>
+            </div>
+            <div class="category-card" onclick="showCategoryDetails('development')">
+                <h3>Development</h3>
+                <p>Web Development, App Development, and more.</p>
+            </div>
+            <div class="category-card" onclick="showCategoryDetails('writing')">
+                <h3>Writing</h3>
+                <p>Content Writing, Copywriting, and more.</p>
+            </div>
+            <div class="category-card" onclick="showCategoryDetails('marketing')">
+                <h3>Marketing</h3>
+                <p>SEO, Social Media, and more.</p>
+            </div>
+        </div>
+        <div id="category-details" class="category-details"></div>
+    </section>
+
+    <!-- Top Freelancers Section -->
+    <section class="top-freelancers">
+        <h2>Top Freelancers</h2>
+        <div class="freelancers-grid">
+            <!-- Example Freelancer -->
+            <!-- <div class="freelancer-card">
+                <img src="freelancer1.jpg" alt="Freelancer 1">
+                <h3>John Doe</h3>
+                <p>Expert in Web Development</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div> -->
+            <div class="freelancers-grid">
+                <div class="freelancer-card">
+                    <img src="./images/free1.jpeg" alt="Freelancer 1">
+                    <div class="content">
+                        <h3>John Doe</h3>
+                        <p>Expert in Web Development</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="details">
+                            <p><strong>Hourly Rate:</strong> $50/hr</p>
+                            <p><strong>Available For:</strong> Web Design, E-commerce, SEO</p>
+                            <p><strong>Bio:</strong> John has over 10 years of experience in creating high-performance websites. Specializes in front-end development and user experience design.</p>
+                        </div>
+                        <a href="#" class="contact-button">Contact</a>
+                        <br><br>
+                        <a href="#details" class="contact-button">Details</a>
+                    </div>
+                </div>
+                <div class="freelancer-card">
+                    <img src="./images/free2.jpeg" alt="Freelancer 2">
+                    <div class="content">
+                        <h3>Jane Smith</h3>
+                        <p>Specialist in Graphic Design</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="details">
+                            <p><strong>Hourly Rate:</strong> $60/hr</p>
+                            <p><strong>Available For:</strong> UI/UX Design, Prototyping, User Research</p>
+                            <p><strong>Bio:</strong> Jane excels in designing intuitive and user-friendly interfaces. With a keen eye for detail, she ensures a seamless user experience across all platforms.</p>
+                        </div>
+                        <a href="#" class="contact-button">Contact</a>
+                        <br><br>
+                        <a href="#details" class="contact-button">Details</a>
+                    </div>
+                </div>
+                <div class="freelancer-card">
+                    <img src="./images/free1.jpeg" alt="Freelancer 3">
+                    <div class="content">
+                        <h3>Emily Johnson</h3>
+                        <p>Expert in Digital Marketing</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="details">
+                            <p><strong>Hourly Rate:</strong> $55/hr</p>
+                            <p><strong>Available For:</strong> SEO, SEM, Content Marketing</p>
+                            <p><strong>Bio:</strong> Emily has a track record of boosting brand visibility and engagement through strategic digital marketing campaigns and SEO optimization.</p>
+                        </div>
+                        <a href="#" class="contact-button">Contact</a>
+                        <br><br>
+                        <a href="#details" class="contact-button">Details</a>
+
+                    </div>
+                </div>
+                <div class="freelancer-card">
+                    <img src="./images/free2.jpeg" alt="Freelancer 4">
+                    <div class="content">
+                        <h3>Michael Brown</h3>
+                        <p>Experienced in Mobile App Development</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="details">
+                            <p><strong>Hourly Rate:</strong> $45/hr</p>
+                            <p><strong>Available For:</strong> Blog Posts, Copywriting, Technical Writing</p>
+                            <p><strong>Bio:</strong> Michael specializes in creating compelling and informative content for various niches. His writing helps businesses connect with their audience effectively.</p>
+                        </div>
+                        <a href="#" class="contact-button">Contact</a>
+                        <br><br>
+                        <a href="#details" class="contact-button">Details</a>
+                    </div>
+                </div>
+                <!-- Add more freelancer cards here as needed -->
+            </div>
+            <!-- Add more freelancer cards here -->
+        </div>
+    </section>
+
+    <!-- Video Posting Section -->
+    <section class="video-posting">
+        <h2>Showcase Your Work</h2>
+        <form id="video-form">
+            <textarea placeholder="Describe your video..." rows="4" required></textarea>
+            <input type="url" placeholder="Video URL" required>
+            <button type="submit">Post Video</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-flex">
+            <div class="footer-inner-flex">
+                <div class="outer-flex-1">
+                    <div class="footer-flex1-item1">For Clients</div>
+                    <i class="fa-solid fa-angle-down angle-outer-flex"></i>
+                </div>
+                <div class="footer-flex1-item toggle12">How to Hire</div>
+                <div class="footer-flex1-item toggle1">Talent Marketplace</div>
+                <div class="footer-flex1-item toggle1">Project Catalog</div>
+                <div class="footer-flex1-item toggle1">Talent Scout</div>
+                <div class="footer-flex1-item toggle1">Hire an Agency</div>
+                <div class="footer-flex1-item toggle1">Enterprise</div>
+                <div class="footer-flex1-item toggle1">Payroll Services</div>
+                <div class="footer-flex1-item toggle1">Direct Contracts</div>
+                <div class="footer-flex1-item toggle1">Hire INDIA</div>
+                <div class="footer-flex1-item toggle1">Hire in the PUNJAB</div>
+            </div>
+            <div class="footer-inner-flex">
+                <div class="outer-flex-1">
+                    <div class="footer-flex2-item2">For Talent</div>
+                    <i class="fa-solid fa-angle-down angle-outer-flex"></i>
+                </div>
+                <div class="footer-flex1-item toggle2">How to Find Work</div>
+                <div class="footer-flex1-item toggle2">Direct Contracts</div>
+                <div class="footer-flex1-item toggle2">Find Freelance Jobs INDIA</div>
+                <div class="footer-flex1-item toggle2">Find Freelance Jobs in the INDIA</div>
+            </div>
+            <div class="footer-inner-flex">
+                <div class="outer-flex-1">
+                    <div class="footer-flex3-item">Resources</div>
+                    <i class="fa-solid fa-angle-down angle-outer-flex"></i>
+                </div>
+                <div class="footer-flex1-item toggle3">Help & Support</div>
+                <div class="footer-flex1-item toggle3">Success Stories</div>
+                <div class="footer-flex1-item toggle3">WorkMitra Reviews</div>
+                <div class="footer-flex1-item toggle3">Resources</div>
+                <div class="footer-flex1-item toggle3">Blog</div>
+                <div class="footer-flex1-item toggle3">Community</div>
+                <div class="footer-flex1-item toggle3">Affiliate Program</div>
+                <div class="footer-flex1-item toggle3">Free Business Tools</div>
+            </div>
+            <div class="footer-inner-flex">
+                <div class="outer-flex-1">
+                    <div class="footer-flex3-item">Company</div>
+                    <i class="fa-solid fa-angle-down angle-outer-flex"></i>
+                </div>
+                <div class="footer-flex1-item toggle4">About us</div>
+                <div class="footer-flex1-item toggle4">Leadership</div>
+                <div class="footer-flex1-item toggle4">Investor Relations</div>
+                <div class="footer-flex1-item toggle4">Careers</div>
+                <div class="footer-flex1-item toggle4">Our impact</div>
+                <div class="footer-flex1-item toggle4">Press</div>
+                <div class="footer-flex1-item toggle4">Contact Us</div>
+                <div class="footer-flex1-item toggle4">Trust,Safety & Security</div>
+                <div class="footer-flex1-item toggle4">Modern Slavery Statement</div>
+            </div>
+        </div>
+        <div class="handle">
+            <div class="social-media">
+                <div class="follow-us">Follow Us</div>
+                <div class="media-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            <div class="mobile">
+                <div class="mobile-app">Mobile App</div>
+                <div class="mobile-icons">
+                    <i class="fa-brands fa-apple"></i>
+                    <i class="fa-brands fa-android"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footnote">
+            <div class="copyright1">
+                &copy; WorkMitra Global Inc.
+            </div>
+            <div class="copyright2">
+                <div class="other-footnote">
+                    <span>Terms of Service</span>
+                    <span>Privacy Policy</span>
+                    <span>CA Note at Collection</span>
+                    <span>Cookie Settings</span>
+                    <span>Accessibility</span>
+                </div>
+            </div>
+        </div>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

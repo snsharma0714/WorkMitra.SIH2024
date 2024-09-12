@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection</title>
+    <link rel="stylesheet" href="selection.css">
+</head>
+<body>
+    <!-- Login Type Selection Page -->
+    <section class="login-type-section">
+        <h2>Select Login Type</h2>
+        <div class="login-options">
+            <button class="login-btn" id="employer-login">Employer Login</button>
+            <button class="login-btn" id="freelancer-login">Freelancer Login</button>
+        </div>
+        <button class="proceed-btn" id="proceed-btn">Proceed</button>
+    </section>
+
+    <script>
+        // JavaScript to handle Proceed button click
+        document.getElementById('proceed-btn').addEventListener('click', function() {
+            const selectedLogin = document.querySelector('.login-btn.active');
+            if (!selectedLogin) {
+                alert("Please select a login type!");
+            } else {
+                const loginType = selectedLogin.textContent.trim();
+                window.location.href = "login.html?loginType=" + loginType;
+            }
+        });
+
+        // Add active state on button click
+        document.querySelectorAll('.login-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.login-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

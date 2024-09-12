@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .role-selection {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="userid">User ID:</label>
+            <input type="text" id="userid" name="userid" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="role-selection">
+                <input type="radio" id="employer" name="role" value="employer" required>
+                <label for="employer">Employer</label>
+
+                <input type="radio" id="freelancer" name="role" value="freelancer" required>
+                <label for="freelancer">Freelancer</label>
+            </div>
+
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            // Get the role selection
+            const role = document.querySelector('input[name="role"]:checked').value;
+
+            // Redirect to the appropriate page based on the role
+            if (role === 'employer') {
+                window.location.href = 'employer-landing-page.html'; // Replace with actual Employer page URL
+            } else if (role === 'freelancer') {
+                window.location.href = 'freelancer-landing-page.html'; // Replace with actual Freelancer page URL
+            }
+        }
+    </script>
+</body>
+</html>
